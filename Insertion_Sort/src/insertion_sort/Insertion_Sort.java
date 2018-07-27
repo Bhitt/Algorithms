@@ -2,9 +2,8 @@
     Insertion sort
         worst case  : O(n^2) comparisons, swaps
         best case   : O(n) comparisons, O(1) swaps
-
         average     : O(n^2) comparisons, swaps
-
+        space       : O(1)
 
  */
 package insertion_sort;
@@ -29,7 +28,8 @@ public class Insertion_Sort {
         //insertion sort algorithm
         insertionSort(array);
         
-        //print the new sorted array
+        //print the newly sorted array
+        System.out.println("After Sort:");
         printArray(array);
         
         
