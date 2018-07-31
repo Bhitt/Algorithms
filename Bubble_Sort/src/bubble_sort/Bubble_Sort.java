@@ -25,7 +25,7 @@ public class Bubble_Sort {
         printArray(array);
         
         
-        //merge sort algorithm
+        //bubble sort algorithm
         bubbleSort(array);
         
         //print the newly sorted array
