@@ -18,27 +18,30 @@ public class DivideNConquer_MatrixMult {
      */
     public static void main(String[] args) {
         //set size of matrices
-        int size=4;
+        int size=(int) Math.pow(2,11);
         //create matrix A
-        int[][]matrixA = randNumMatrix(size);
-            //int[][]matrixA = setNumMatrix(size);
+        //int[][]matrixA = randNumMatrix(size);
+        int[][]matrixA = setNumMatrix(size);
         //output matrix A
-        System.out.println("Matrix A: ");
-        printMatrix(size,matrixA);
+//        System.out.println("Matrix A: ");
+//        printMatrix(size,matrixA);
         //create matrix B
-        int[][]matrixB = randNumMatrix(size);
-            //int[][]matrixB = setNumMatrix(size);
+        //int[][]matrixB = randNumMatrix(size);
+        int[][]matrixB = setNumMatrix(size);
         //output matrix B
-        System.out.println("Matrix B: ");
-        printMatrix(size,matrixB);
+//        System.out.println("Matrix B: ");
+//        printMatrix(size,matrixB);
+
+        //Start the timer
+        long startTime = System.nanoTime();
         
         //*****************************************//
         //           Linear method                 //
         //*****************************************//
-//        System.out.println("Using a linear method");
-//        System.out.println("************************");
-//        Linear l = new Linear();
-//        int[][]matrixC = l.multiplyMatrix(matrixA, matrixB);
+        System.out.println("Using a linear method");
+        System.out.println("************************");
+        Linear l = new Linear();
+        int[][]matrixC = l.multiplyMatrix(matrixA, matrixB);
         
         //*****************************************//
         //         Divide and Conquer              //
@@ -49,16 +52,33 @@ public class DivideNConquer_MatrixMult {
 //        int[][]matrixC = d.multiplyMatrix(matrixA, matrixB);
         
         //*****************************************//
-        //        Strassen's Method                //
+        //        Strassen's Method  (1)           //
         //*****************************************//
-        System.out.println("Using Strassen's Method");
-        System.out.println("************************");
-        Strassen s = new Strassen();
-        int[][]matrixC = s.multiplyMatrix(matrixA, matrixB);
+//        System.out.println("Using Strassen's Method (Base case n=1)");
+//        System.out.println("************************");
+//        Strassen s = new Strassen();
+//        int[][]matrixC = s.multiplyMatrix(matrixA, matrixB);
+        
+        //*****************************************//
+        //        Strassen's Method  (2)           //
+        //*****************************************//
+//        System.out.println("Using Strassen's Method (Base case n=2)");
+//        System.out.println("************************");
+//        Strassen_Leaf2 s2 = new Strassen_Leaf2();
+//        int[][]matrixC = s2.multiplyMatrix(matrixA, matrixB);
+        
+        
+        //Find the final time
+        long endTime = System.nanoTime();
+        long timeElapsed = endTime - startTime;
         
         //print final matrix
-        System.out.println("Matrix C (Product of A & B):");
-        printMatrix(size, matrixC);
+        System.out.println("Finished computing");
+        System.out.println("Execution time in nanaseconds: "+ timeElapsed);
+        System.out.println("Execution time in milliseconds: "+ timeElapsed/1000000);
+        System.out.println("Execution time in seconds: "+ timeElapsed/1000000000);
+//        System.out.println("Matrix C (Product of A & B):");
+//       printMatrix(size, matrixC);
         
     }
     
@@ -89,7 +109,7 @@ public class DivideNConquer_MatrixMult {
     //method to create a matrix with a specific number in for all elements
     public static int[][] setNumMatrix(int size){
         //specific number for all elements
-        int number=1;
+        int number=3;
         //create matrix with a set number
         int[][]matrix = new int[size][size];
         for(int i=0;i<size;i++){
