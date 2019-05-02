@@ -21,7 +21,7 @@ public class Kth_Smallest {
         //initialize n for size of array
         int n = 1000;
         //Initialize k and ans variables
-        int k=n;
+        int k=n/2;
         int ans=0;
         //Initialize list of elements to be sorted and searched
         Test_inputs inputs = new Test_inputs();
@@ -34,8 +34,8 @@ public class Kth_Smallest {
 //        Select_kth_1 select1 = new Select_kth_1();
 //        ans = select1.findKth(array, k);
         
-        //call select_kth_2 to iteratively partion with quick sort partition and
-        //return the kth smallest element
+        //call select_kth_2 to iteratively partion with quick sort partition 
+        //and return the kth smallest element
 //        Select_kth_2 select2 = new Select_kth_2();
 //        ans = select2.findKth(array, array.length, k);
 

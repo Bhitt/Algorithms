@@ -36,7 +36,7 @@ public class Select_kth_4 {
         }
         
         //find the median of medians
-        int v = Select2(M,(int)Math.floor(n/r),(int)Math.ceil(Math.floor(n/r)/2));
+     int v = Select2(M,(int)Math.floor(n/r),(int)Math.ceil(Math.floor(n/r)/2));
         
         //partition using the median of medians as the pivot
         int pivotPos = 0;
