@@ -1,5 +1,7 @@
 /*
-
+Select_kth_3: Use the partition method of quicksort recursively until the
+              kth element is in the pivot position after partitioning.
+              Then return the kth element.
  */
 package kth_smallest;
 
@@ -16,6 +18,7 @@ public class Select_kth_3 {
         pivotPos = partition(arr,m,j,k);
         return arr[pivotPos];
     }
+    
     //
     int partition(int arr[], int low, int high, int k) 
     {  

@@ -9,7 +9,7 @@ package kth_smallest;
  * @author bhitt
  */
 public class Select_kth_1 {
-    //methods
+    //find the kth element in the array and return it
     int findKth(int arr[], int k){
        sort(arr,0,arr.length-1);
        return arr[k-1];

@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Select_kth_4: Find the median of medians(MM), then use the MM as the pivot
+              for the partitioning method of quick sort. Once the kth element
+              is in the pivot position after partitioning, return the kth
+              element.
  */
 package kth_smallest;
 
@@ -31,17 +32,18 @@ public class Select_kth_4 {
             //sort the subset
             insertionSort(temp);
             //add the median of the subset into M
-            M[i] = temp[((int)Math.floor(r/2))-1];
+            M[i] = temp[((int)Math.ceil(r/2))];
         }
         
         //find the median of medians
-        int v = Select2(M,(int)Math.floor(n/r),((((int)Math.floor(n/r))/2)+1));
+        int v = Select2(M,(int)Math.floor(n/r),(int)Math.ceil(Math.floor(n/r)/2));
         
         //partition using the median of medians as the pivot
         int pivotPos = 0;
         for(int i=0;i<arr.length;i++){
             if(arr[i]==v) pivotPos=i;
         }
+        
         int m = 0;
         int j = n-1;
         pivotPos = partition(arr,m,j,pivotPos);
